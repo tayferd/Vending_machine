@@ -1,0 +1,135 @@
+import tkinter as tk
+
+sodas = {
+    'Coca-Cola': 1.50,
+    'Pepsi': 1.50,
+    'Sprite': 1.25,
+    'Mountain Dew': 1.25,
+    'Fanta': 1.25,
+    'Dr. Pepper': 1.75,
+    'Ginger Ale': 1.75,
+    'Root Beer': 1.75,
+    'Cream Soda': 1.75,
+    '7-Up': 1.25,
+    'Orange Crush': 1.50,
+    'Grape Soda': 1.50,
+    'Cherry Coke': 1.75,
+    'Vanilla Coke': 1.75,
+    'Lemon-Lime Soda': 1.25
+}
+
+def buy_soda(soda_name):
+    price = sodas[soda_name]
+    message = f" {soda_name} ${price:.2f}"
+    status_label.config(text=message)
+def pay():
+    message = f" insert ${price:.2f}"
+    status_label.config(text=message)
+
+
+root = tk.Tk()
+root.title("Soda Machine")
+root.geometry("580x550")
+
+button_frame = tk.Frame(root)
+button_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+canvas = tk.Canvas(root, width=400, height=400)
+canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+soda_img = tk.PhotoImage(file="soda_image.png")
+canvas.background = soda_img
+canvas.create_image(0, 0, anchor=tk.NW, image=soda_img)
+
+
+status_label = tk.Label(button_frame, text="make a selection", font=("Arial", 8))
+status_label.grid(row=0, column=1, columnspan=2, padx=5, pady=5)
+
+buy_button = tk.Button(button_frame, text="pay", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=5, height=2, bd=0, highlightthickness=0,
+                       command=pay)
+buy_button.  grid(row=0, column=0)
+
+# Soda buttons
+coca_cola_button = tk.Button(button_frame, text="Coca-Cola", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Coca-Cola"))
+coca_cola_button.grid(row=1, column=0, padx=5, pady=5)
+
+pepsi_button = tk.Button(button_frame, text="Pepsi", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Pepsi"))
+pepsi_button.grid(row=1, column=1, padx=5, pady=5)
+
+sprite_button = tk.Button(button_frame, text="Sprite", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Sprite"))
+sprite_button.grid(row=2, column=0, padx=5, pady=5)
+
+mountain_dew_button = tk.Button(button_frame, text="Mountain Dew", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Mountain Dew"))
+mountain_dew_button.grid(row=2, column=1, padx=5, pady=5)
+
+fanta_button = tk.Button(button_frame, text="Fanta", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Fanta"))
+fanta_button.grid(row=3, column=0, padx=5, pady=5)
+
+dr_pepper_button = tk.Button(button_frame, text="Dr. Pepper", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Dr. Pepper"))
+dr_pepper_button.grid(row=3, column=1, padx=5, pady=5)
+
+ginger_ale_button = tk.Button(button_frame, text="Ginger Ale", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Ginger Ale"))
+ginger_ale_button.grid(row=4, column=0, padx=5, pady=5)
+
+root_beer_button = tk.Button(button_frame, text="Root Beer", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Root Beer"))
+root_beer_button.grid(row=4, column=1, padx=5, pady=5)
+
+
+cream_soda_button = tk.Button(button_frame, text="Cream Soda", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Cream Soda"))
+cream_soda_button.grid(row=5, column=0, padx=5, pady=5)
+
+seven_up_button = tk.Button(button_frame, text="7-Up", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("7-Up"))
+seven_up_button.grid(row=5, column=1, padx=5, pady=5)
+
+orange_crush_button = tk.Button(button_frame, text="Orange Crush", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Orange Crush"))
+orange_crush_button.grid(row=6, column=0, padx=5, pady=5)
+
+grape_soda_button = tk.Button(button_frame, text="Grape Soda", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Grape Soda"))
+grape_soda_button.grid(row=6, column=1, padx=5, pady=5)
+
+cherry_coke_button = tk.Button(button_frame, text="Cherry Coke", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Cherry Coke"))
+cherry_coke_button.grid(row=7, column=0, padx=5, pady=5)
+
+vanilla_coke_button = tk.Button(button_frame, text="Vanilla Coke", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Vanilla Coke"))
+vanilla_coke_button.grid(row=7, column=1, padx=5, pady=5)
+
+lemon_lime_soda_button = tk.Button(button_frame, text="Lemon-Lime", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Lemon-Lime Soda"))
+lemon_lime_soda_button.grid(row=15, column=0, padx=5, pady=5)
+
+water_button = tk.Button(button_frame, text="water", font=("Arial", 10), bg="#00bfff", fg="white",
+                       width=12, height=3, bd=0, highlightthickness=0,
+                       command=lambda: buy_soda("Lemon-Lime Soda"))
+water_button.grid(row=15, column=1, padx=5, pady=5)
+
+root.mainloop()
